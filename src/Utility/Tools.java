@@ -2,6 +2,7 @@ package Utility;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class Tools {
 
@@ -11,6 +12,11 @@ public class Tools {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void SelectMenu(WebElement element, String value) {
+        Select select = new Select(element);
+        select.selectByValue(value);
     }
 
     public static void JavaScriptClick(WebElement element) {
@@ -28,10 +34,6 @@ public class Tools {
     public static int randomGenerator(int until) {
         return (int) (Math.random() * until);
     }
-
-
-
-
 
 
 }
