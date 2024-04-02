@@ -23,8 +23,8 @@ public class BaseDriver {
 
     public static WebDriverWait wait;
 
-    @BeforeClass(groups = {"Smoke", "Regression", "LoginTest", "Logout",
-            "Registiration", "UITesting", "TABMenu", "Search", "Order", ""})
+    @BeforeClass(groups = {"Smoke Test", "Registiration Test", "Login Test", "Logout",
+            "UITesting", "TABMenu", "Search", "Order", ""})
     public void startUpOperations() {
         Logger logger = Logger.getLogger("");
         logger.setLevel(Level.SEVERE);
@@ -37,17 +37,14 @@ public class BaseDriver {
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(25));
 
-        LoginProcesses();
-
-    }
-
-    public void LoginProcesses() {
+        driver.get("https://demo.nopcommerce.com/");
 
     }
 
 
-    @AfterClass(groups = {"Smoke", "Regression", "LoginTest", "Logout",
-            "Registiration", "UITesting", "TABMenu", "Search", "Order", ""})
+
+    @AfterClass(groups = {"Smoke Test", "Registiration Test", "Login Test", "Logout"
+            , "UITesting", "TABMenu", "Search", "Order", ""})
     public void closingOperations() {
         Tools.wait(3);
 

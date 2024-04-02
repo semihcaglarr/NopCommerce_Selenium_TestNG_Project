@@ -1,24 +1,22 @@
 package US_501;
 
 import Utility.BaseDriver;
-import Utility.LE;
 import Utility.Tools;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class KullaniciKaydiOlusturma extends BaseDriver {
+public class Register extends BaseDriver {
 
-    String eMailChange = "bugfighters" + ((int) (Math.random() * 1000)) + "@gmail.com";
+    public static String eMailChange = "bugfighters" + ((int) (Math.random() * 1000)) + "@gmail.com";
+    public static String passwordChange = "123456";
 
-    @Test(groups = {"Registiration", "Smoke"})
-    public void TC_0101() {
+    @Test(groups = {"Smoke Test", "Registiration Test"})
+    public void Register() {
 
         SoftAssert softAssert = new SoftAssert();
 
         Register_Elements re = new Register_Elements();
-
-        driver.get("https://demo.nopcommerce.com/");
 
         re.register.click();
 
@@ -39,8 +37,8 @@ public class KullaniciKaydiOlusturma extends BaseDriver {
 
         re.companyName.sendKeys("Los Pollos Hermanos");
 
-        re.password.sendKeys("123456");
-        re.confirmPassword.sendKeys("123456");
+        re.password.sendKeys(passwordChange);
+        re.confirmPassword.sendKeys(passwordChange);
 
         re.registerButton.click();
 
@@ -49,6 +47,7 @@ public class KullaniciKaydiOlusturma extends BaseDriver {
         softAssert.assertTrue(re.resultText.getText().contains("completed"), "Unable to Login");
         softAssert.assertAll();
 
-    }
+        re.registerContinueButton.click();
 
+    }
 }

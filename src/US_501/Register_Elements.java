@@ -49,7 +49,8 @@ public class Register_Elements {
     @FindBy(xpath = "//div[@class='result']")
     public WebElement resultText;
 
-
+    @FindBy(xpath = "//a[@class='button-1 register-continue-button']")
+    public WebElement registerContinueButton;
 
 
 }
