@@ -33,7 +33,6 @@ public class Register extends BaseDriver {
         Tools.SelectMenu(re.dateOfBirthYear, "1995");
 
         re.email.sendKeys(eMailChange);
-        Tools.wait(3);
 
         re.companyName.sendKeys("Los Pollos Hermanos");
 

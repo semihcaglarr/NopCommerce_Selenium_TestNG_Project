@@ -23,8 +23,8 @@ public class BaseDriver {
 
     public static WebDriverWait wait;
 
-    @BeforeClass(groups = {"Smoke Test", "Registiration Test", "Login Test", "Logout",
-            "UITesting", "TABMenu", "Search", "Order", ""})
+    @BeforeClass(groups = {"Smoke Test", "Registiration Test", "Login Test", "Logout Test",
+            "UI Test", "TABMenu Test", "Search Test", "Order Test"})
     public void startUpOperations() {
         Logger logger = Logger.getLogger("");
         logger.setLevel(Level.SEVERE);
@@ -43,8 +43,8 @@ public class BaseDriver {
 
 
 
-    @AfterClass(groups = {"Smoke Test", "Registiration Test", "Login Test", "Logout"
-            , "UITesting", "TABMenu", "Search", "Order", ""})
+    @AfterClass(groups = {"Smoke Test", "Registiration Test", "Login Test", "Logout Test"
+            , "UI Test", "TABMenu Test", "Search Test", "Order Test"})
     public void closingOperations() {
         Tools.wait(3);
 

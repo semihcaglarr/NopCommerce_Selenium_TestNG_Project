@@ -4,7 +4,6 @@ import US_501.Register;
 import US_501.Register_Elements;
 import Utility.BaseDriver;
 import Utility.Tools;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Login extends BaseDriver {
@@ -13,10 +12,9 @@ public class Login extends BaseDriver {
     public void LoginTest() {
 
         Register_Elements re = new Register_Elements();
-        LoginElements le = new LoginElements();
+        Login_Elements le = new Login_Elements();
 
         le.login.click();
-        Tools.wait(3);
 
         re.email.sendKeys(Register.eMailChange);
         re.password.sendKeys(Register.passwordChange);
