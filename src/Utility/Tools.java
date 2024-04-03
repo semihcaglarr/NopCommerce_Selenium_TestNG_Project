@@ -24,8 +24,17 @@ public class Tools {
         aksiyon.perform();
     }
 
+    public static void ActionHover(WebElement element){
+        Actions driverAksiyon = new Actions(BaseDriver.driver);
+        Action aksiyon = driverAksiyon.moveToElement(element).build();
+        BaseDriver.wait.until(ExpectedConditions.visibilityOf(element));
+        aksiyon.perform();
+
+    }
+
     public static void SelectMenu(WebElement element, String value) {
         Select select = new Select(element);
+        BaseDriver.wait.until(ExpectedConditions.elementToBeClickable(element));
         select.selectByValue(value);
     }
 
