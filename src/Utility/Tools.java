@@ -6,8 +6,6 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-
-import java.security.PublicKey;
 import java.util.List;
 
 public class Tools {
@@ -26,7 +24,6 @@ public class Tools {
         BaseDriver.wait.until(ExpectedConditions.visibilityOf(element));
         aksiyon.perform();
        // new Actions(BaseDriver.driver).scrollToElement(element).build().perform();
-
     }
 
     public static void ActionClick(WebElement element) {
@@ -41,7 +38,6 @@ public class Tools {
         Action aksiyon = driverAksiyon.moveToElement(element).build();
         BaseDriver.wait.until(ExpectedConditions.visibilityOf(element));
         aksiyon.perform();
-
     }
 
     public static void SelectMenu(WebElement element, String value) {
@@ -53,13 +49,11 @@ public class Tools {
     public static void JavaScriptClick(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) BaseDriver.driver;
         jse.executeScript("arguments[0].click();", element);
-
     }
 
     public static void JavaScriptScroll(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) BaseDriver.driver;
         jse.executeScript("arguments[0].scrollIntoView(true);", element);
-
     }
 
     public static int randomGenerator(int until) {

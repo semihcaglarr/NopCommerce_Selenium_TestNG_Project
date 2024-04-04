@@ -4,11 +4,10 @@ import Utility.BaseDriver;
 import Utility.Tools;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -16,9 +15,10 @@ public class ControlProductsTabMenu extends BaseDriver {
 
 
     @Test
-    //@Parameters("mesaj")
-    public void ControlProductsTabMenuTest() {
+    @Parameters("mesaj")
+    public void ControlProductsTabMenuTest(String gelenMesaj) {
         ControlProductsTabMenu_Elements cptme = new ControlProductsTabMenu_Elements();
+        Tools.wait(2);
 
 //        for (int i = 0; i < cptme.tabMenuList.size(); i++) {
 //            switch (cptme.tabMenuList.get(i).getText().trim()) {
@@ -332,11 +332,28 @@ public class ControlProductsTabMenu extends BaseDriver {
             for (int j = 0; j < productNames.get(i).size(); j++) {
                 System.out.println(productNames.get(i).get(j).toString());
             }
-
         }
 
+        cptme.searchInput.sendKeys(gelenMesaj);
+        cptme.searchButton.click();
+
+        wait.until(ExpectedConditions.visibilityOf(cptme.soughtAfterProduct));
+        Tools.ActionHover(cptme.soughtAfterProduct);
+        String productName = cptme.soughtAfterProduct.getText();
+
+        Assert.assertEquals(productName, gelenMesaj, "The product sent is not the same as the products formed");
 
 
+        boolean foundIn = false;
+        for (int i = 0; i < productNames.size(); i++) {
+            for (int j = 0; j < productNames.get(i).size(); j++) {
+                if (productName.equals(productNames.get(i).get(j).toString())) {
+                    foundIn = true;
+                }
+            }
+        }
+
+        Assert.assertTrue(foundIn,"Wrong product found in");
 
 
 //        int random = Tools.randomGenerator(cptme.noteBookNameList.size());

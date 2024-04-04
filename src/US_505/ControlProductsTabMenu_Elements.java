@@ -88,6 +88,9 @@ public class ControlProductsTabMenu_Elements {
     @FindBy(xpath = "//h2[@class='product-title']/a")
     public List<WebElement> productTitleList;
 
+    @FindBy(xpath = "//h2[@class='product-title']/a")
+    public WebElement soughtAfterProduct;
+
 
 
 
