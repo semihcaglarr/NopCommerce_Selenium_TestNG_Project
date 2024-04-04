@@ -41,12 +41,12 @@ public class BaseDriver {
 
     }
 
-    @AfterClass(groups = {"Smoke Test", "Registiration Test", "Login Test", "Logout Test"
-            , "UI Test", "TABMenu Test", "Search Test", "Order Test"})
-    public void closingOperations() {
-        Tools.wait(3);
-
-        driver.quit();
-
-    }
+//    @AfterClass(groups = {"Smoke Test", "Registiration Test", "Login Test", "Logout Test"
+//            , "UI Test", "TABMenu Test", "Search Test", "Order Test"})
+//    public void closingOperations() {
+//        Tools.wait(3);
+//
+//        driver.quit();
+//
+//    }
 }

@@ -11,7 +11,8 @@ public class TabMenuControl_Elements {
     public TabMenuControl_Elements() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
-
+    @FindBy(xpath = "//ul[@class='top-menu notmobile']/li/a")
+    public List<WebElement> tabMenu;
 
 
 
