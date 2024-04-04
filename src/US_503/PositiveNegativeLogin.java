@@ -4,11 +4,7 @@ import US_501.Register;
 import US_501.Register_Elements;
 import US_502.Login_Elements;
 import Utility.BaseDriver;
-import Utility.Tools;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class PositiveNegativeLogin extends BaseDriver {
 

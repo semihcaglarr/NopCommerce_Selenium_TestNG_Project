@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.security.PublicKey;
+import java.util.List;
 
 public class Tools {
 
@@ -63,6 +64,18 @@ public class Tools {
 
     public static int randomGenerator(int until) {
         return (int) (Math.random() * until);
+    }
+
+    public static boolean ListContainsString(List<WebElement> list, String wordToSearch) {
+        boolean foundIn = false;
+
+        for (WebElement element : list) {
+
+            if (element.getText().toLowerCase().equals(wordToSearch.toLowerCase())) {
+                foundIn = true;
+            }
+        }
+        return foundIn;
     }
 
 
