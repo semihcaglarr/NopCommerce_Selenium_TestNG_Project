@@ -44,5 +44,11 @@ public class ControlProductsTabMenu_Elements {
     @FindBy(xpath = "//ul[@class='top-menu notmobile']/li/a")
     public List<WebElement> tabMenuList;
 
+    @FindBy(xpath = "//input[@id='small-searchterms']")
+    public WebElement searchInput;
+
+    @FindBy(xpath = "//button[@class='button-1 search-box-button']")
+    public WebElement searchButton;
+
 
 }

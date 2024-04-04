@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="My suit">
+    <test name="Test1">
+        <parameter name="mesaj" value="Apple MacBook Pro 13-inch"></parameter>
+
+        <classes>
+            <class name="US_505.ControlProductsTabMenu"></class>
+        </classes>
+    </test>
+
+    <test name="Test2">
+        <parameter name="mesaj" value="Asus N551JK-XO076H Laptop"></parameter>
+
+        <classes>
+            <class name="US_505.ControlProductsTabMenu"></class>
+        </classes>
+    </test>
+</suite>

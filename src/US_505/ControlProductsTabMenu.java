@@ -4,6 +4,7 @@ import Utility.BaseDriver;
 import Utility.Tools;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ public class ControlProductsTabMenu extends BaseDriver {
 
 
     @Test
-    public void ControlProductsTabMenuTest() {
+    @Parameters("mesaj")
+    public void ControlProductsTabMenuTest(String gelenMesaj) {
         ControlProductsTabMenu_Elements cptme = new ControlProductsTabMenu_Elements();
 
         for (int i = 0; i < cptme.tabMenuList.size(); i++) {
@@ -64,6 +66,24 @@ public class ControlProductsTabMenu extends BaseDriver {
 
         for (int i = 0; i < cptme.noteBookNameList.size(); i++) {
             System.out.println(cptme.noteBookNameList.get(i).getText());
+        }
+        int random = Tools.randomGenerator(cptme.noteBookNameList.size());
+        Tools.JavaScriptClick(cptme.noteBookNameList.get(random));
+
+
+        Tools.wait(3);
+        Tools.ActionScroll(cptme.searchInput);
+//        Tools.JavaScriptClick(cptme.searchInput);
+//        Tools.JavaScriptScroll(cptme.searchInput);
+        cptme.searchInput.sendKeys(gelenMesaj);
+        cptme.searchButton.click();
+
+        for (WebElement e : cptme.noteBookNameList) {
+            if (e.getText().equalsIgnoreCase(gelenMesaj)) {
+                System.out.println("Ürün Bulundu");
+            } else {
+                System.out.println("Ürün Bulunamadı");
+            }
         }
 
 

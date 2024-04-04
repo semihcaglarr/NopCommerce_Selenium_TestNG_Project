@@ -7,6 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.security.PublicKey;
+
 public class Tools {
 
     public static void wait(int limit) {
@@ -17,6 +19,15 @@ public class Tools {
         }
     }
 
+    public static void ActionScroll(WebElement element) {
+        Actions driverAksiyon = new Actions(BaseDriver.driver);
+        Action aksiyon = driverAksiyon.scrollToElement(element).build();
+        BaseDriver.wait.until(ExpectedConditions.visibilityOf(element));
+        aksiyon.perform();
+       // new Actions(BaseDriver.driver).scrollToElement(element).build().perform();
+
+    }
+
     public static void ActionClick(WebElement element) {
         Actions driverAksiyon = new Actions(BaseDriver.driver);
         Action aksiyon = driverAksiyon.moveToElement(element).click().build();
@@ -24,7 +35,7 @@ public class Tools {
         aksiyon.perform();
     }
 
-    public static void ActionHover(WebElement element){
+    public static void ActionHover(WebElement element) {
         Actions driverAksiyon = new Actions(BaseDriver.driver);
         Action aksiyon = driverAksiyon.moveToElement(element).build();
         BaseDriver.wait.until(ExpectedConditions.visibilityOf(element));
