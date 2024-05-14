@@ -1,15 +1,12 @@
 package US_505;
 
-import Utility.BaseDriver;
-import Utility.Tools;
+import Utility.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 
 public class ControlProductsTabMenu extends BaseDriver {
 
@@ -353,7 +350,7 @@ public class ControlProductsTabMenu extends BaseDriver {
             }
         }
 
-        Assert.assertTrue(foundIn,"Wrong product found in");
+        Assert.assertTrue(foundIn, "Wrong product found in");
 
 
 //        int random = Tools.randomGenerator(cptme.noteBookNameList.size());

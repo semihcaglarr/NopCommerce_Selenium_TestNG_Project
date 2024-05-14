@@ -2,8 +2,7 @@ package US_505;
 
 import Utility.BaseDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.*;
 
 import java.util.List;
 
@@ -90,8 +89,6 @@ public class ControlProductsTabMenu_Elements {
 
     @FindBy(xpath = "//h2[@class='product-title']/a")
     public WebElement soughtAfterProduct;
-
-
 
 
 }

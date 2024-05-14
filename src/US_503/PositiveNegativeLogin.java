@@ -1,7 +1,6 @@
 package US_503;
 
-import US_501.Register;
-import US_501.Register_Elements;
+import US_501.*;
 import US_502.Login_Elements;
 import Utility.BaseDriver;
 import org.testng.annotations.*;

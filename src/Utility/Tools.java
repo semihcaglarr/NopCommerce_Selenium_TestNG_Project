@@ -1,11 +1,9 @@
 package Utility;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.*;
+import org.openqa.selenium.support.ui.*;
+
 import java.util.List;
 
 public class Tools {
@@ -23,7 +21,7 @@ public class Tools {
         Action aksiyon = driverAksiyon.scrollToElement(element).build();
         BaseDriver.wait.until(ExpectedConditions.visibilityOf(element));
         aksiyon.perform();
-       // new Actions(BaseDriver.driver).scrollToElement(element).build().perform();
+        // new Actions(BaseDriver.driver).scrollToElement(element).build().perform();
     }
 
     public static void ActionClick(WebElement element) {

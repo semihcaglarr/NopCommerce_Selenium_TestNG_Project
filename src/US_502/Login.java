@@ -1,9 +1,7 @@
 package US_502;
 
-import US_501.Register;
-import US_501.Register_Elements;
-import Utility.BaseDriver;
-import Utility.Tools;
+import US_501.*;
+import Utility.*;
 import org.testng.annotations.Test;
 
 public class Login extends BaseDriver {
